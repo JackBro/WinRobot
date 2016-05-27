@@ -1,5 +1,6 @@
-## About WinRobot [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/caoym/WinRobot/master/LICENSE)
-
+## About WinRobot 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/caoym/WinRobot)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/caoym/WinRobot/master/LICENSE)
 * A powerful & high performance screen capturer and Keyboard/mouse input simulator(Support Windows UAC\Winlogon\DirectShowOverlay).
 * (Optional)An implementation of java.awt.Robot under windows
 
