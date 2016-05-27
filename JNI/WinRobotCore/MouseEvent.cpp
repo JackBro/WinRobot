@@ -10,8 +10,6 @@
 inline LONG GetOpstLen(LONG len,LONG Max)
 {
 	if(Max == 0) return 0;
-	if(len<0)len = 0;
-	if(len>Max)len = Max;
 	return len * 0xFFFF/ Max ;
 }
 CMouseEvent::CMouseEvent(EVENT event,int x,int y)
