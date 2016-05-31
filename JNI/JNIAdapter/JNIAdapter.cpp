@@ -14,6 +14,7 @@
 #endif
 HMODULE g_hModule;
 LONG m_nChecked = 0;
+BOOL jni_created = FALSE;
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
                        LPVOID lpReserved
@@ -44,12 +45,15 @@ JNIEXPORT void JNICALL Java_com_caoym_WinRobot_CreateJNIObj
 		return ;
   	}
 	CWinRobotJNIAdapter::AttachJNIObj(env,jthiz);
+	jni_created = TRUE;
 }
 
 JNIEXPORT void JNICALL Java_com_caoym_WinRobot_DestroyJNIObj 
 (JNIEnv *env, jobject jthiz)
 {
-	CWinRobotJNIAdapter::DetachJNIObj(env,jthiz);
+	if (jni_created) {
+		CWinRobotJNIAdapter::DetachJNIObj(env, jthiz);
+	}
 }
 
 /*
