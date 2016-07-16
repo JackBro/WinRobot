@@ -165,11 +165,12 @@ public :
 
 		// change LaunchACL and AccessACL,so that no "Administrator" privileges is need.
 		//S-1-5-32-545 is USERS's SID
-		DWORD error = ChangeAppIDLaunchACL(GetAppIdT(),_T("S-1-5-32-545"),true,true,COM_RIGHTS_ACTIVATE_LOCAL);
+		TCHAR szUsersSID[] = _T("S-1-5-32-545");
+		DWORD error = ChangeAppIDLaunchACL(GetAppIdT(),szUsersSID,true,true,COM_RIGHTS_ACTIVATE_LOCAL);
 		if(error){
 			DebugOutF(filelog::log_error,"ChangeAppIDLaunchACL failed with %d",error);
 		}
-		error = ChangeAppIDAccessACL(GetAppIdT(),_T("S-1-5-32-545"),true,true,COM_RIGHTS_EXECUTE_LOCAL);
+		error = ChangeAppIDAccessACL(GetAppIdT(),szUsersSID,true,true,COM_RIGHTS_EXECUTE_LOCAL);
 		
 		if(error){
 			DebugOutF(filelog::log_error,"ChangeAppIDAccessACL failed with %d",error);
